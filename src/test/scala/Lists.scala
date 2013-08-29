@@ -1,14 +1,7 @@
 import org.scalatest.matchers.ShouldMatchers
 import org.scalatest.FunSuite
 
-class ListsSuite extends FunSuite with ShouldMatchers {
-  /**
-   * Throws an exception to report that the test has not been filled out yet.
-   * This allows you to distinguish between tests you haven't started, those
-   * you've completed, and those you're still working on.
-   */
-  def _____ = pending
-
+class ListsSuite extends FunSuite with ShouldMatchers with net.spifftastic.problems.ListProblems {
   /*============================================================================
     All list functions are defined using generics. This is to -- hopefully --
     help you focus on the problem at hand without worrying about the types as
@@ -20,289 +13,358 @@ class ListsSuite extends FunSuite with ShouldMatchers {
     the problems.
   ============================================================================*/
 
-  def last[T](list: List[T]) = _____
 
-  test("P01 (*) Find the last element of a list") {
-    val inputList = List(1, 1, 2, 3, 5, 8)
-    last(inputList) should equal (8)
+  test("P01 (*)  Find the last element of a list") {
+    try {
+      val inputList = List(1, 1, 2, 3, 5, 8)
+      last(inputList) should equal (8)
+    } catch {
+      case nie: NotImplementedError => pending
+    }
   }
 
 
-  def penultimate[T](list: List[T]) = _____
-
-  test("P02 (*) Find the last but one element of a list") {
-    val inputList = List(1, 1, 2, 3, 5, 8)
-    penultimate(inputList) should equal (5)
+  test("P02 (*)  Find the last but one element of a list") {
+    try {
+      val inputList = List(1, 1, 2, 3, 5, 8)
+      penultimate(inputList) should equal (5)
+    } catch {
+      case nie: NotImplementedError => pending
+    }
   }
 
-  /* By convention, the first element in the list is element 0. */
-  def nth[T](k: Int, list: List[T]) = _____
-
-  test("P03 (*) Find the Kth element of a list") {
-    val inputList = List(1, 1, 2, 3, 5, 8)
-    nth(2, inputList) should equal (2)
-  }
-
-
-  def length[T](list: List[T]) = _____
-
-  test("P04 (*) Find the number of elements of a list") {
-    val inputList = List(1, 1, 2, 3, 5, 8)
-    length(inputList) should equal (6)
+  test("P03 (*)  Find the Kth element of a list") {
+    try {
+      val inputList = List(1, 1, 2, 3, 5, 8)
+      nth(2, inputList) should equal (2)
+    } catch {
+      case nie: NotImplementedError => pending
+    }
   }
 
 
-  def reverse[T](list: List[T]) = _____
-
-  test("P05 (*) Reverse a list") {
-    val inputList = List(1, 1, 2, 3, 5, 8)
-    val outputList = List(8, 5, 3, 2, 1, 1)
-    reverse(inputList) should equal (outputList)
+  test("P04 (*)  Find the number of elements of a list") {
+    try {
+      val inputList = List(1, 1, 2, 3, 5, 8)
+      length(inputList) should equal (6)
+    } catch {
+      case nie: NotImplementedError => pending
+    }
   }
 
 
-  def isPalindrome[T](list: List[T]) = _____
-
-  test("P06 (*) Find whether a list is a palindrome") {
-    val inputList = List(1, 1, 2, 3, 5, 8)
-    val palindromeInputList = List(1, 2, 3, 2, 1)
-
-    isPalindrome(inputList) should equal (false)
-    isPalindrome(palindromeInputList) should equal (true)
+  test("P05 (*)  Reverse a list") {
+    try {
+      val inputList = List(1, 1, 2, 3, 5, 8)
+      val outputList = List(8, 5, 3, 2, 1, 1)
+      reverse(inputList) should equal (outputList)
+    } catch {
+      case nie: NotImplementedError => pending
+    }
   }
 
 
-  def flatten[T](list: List[T]) = _____
+  test("P06 (*)  Find whether a list is a palindrome") {
+    try {
+      val inputList = List(1, 1, 2, 3, 5, 8)
+      val palindromeInputList = List(1, 2, 3, 2, 1)
+
+      isPalindrome(inputList) should equal (false)
+      isPalindrome(palindromeInputList) should equal (true)
+    } catch {
+      case nie: NotImplementedError => pending
+    }
+  }
+
 
   test("P07 (**) Flatten a nested list structure") {
-    val inputList = List(1, 1, 2, 3, 5, 8)
-    val nestedList = List(List(1, 1), 2, List(3, List(5, 8)))
+    try {
+      val inputList = List(1, 1, 2, 3, 5, 8)
+      val nestedList = List(List(1, 1), 2, List(3, List(5, 8)))
 
-    flatten(inputList) should equal (inputList)
+      flatten(inputList) should equal (inputList)
+    } catch {
+      case nie: NotImplementedError => pending
+    }
   }
 
-
-  /*=========================================================================*/
-
-
-  /*
-    If a list contains repeated elements they should be replaced with a
-    single copy of the element. The order of the elements should not be
-    changed.
-  */
-  def compress[T](list: List[T]) = _____
 
   test("P08 (**) Eliminate consecutive duplicates of list elements") {
-    val inputList = List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)
-    val outputList = List('a, 'b, 'c, 'a, 'd, 'e)
-    compress(inputList) should equal (outputList)
+    try {
+      val inputList = List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)
+      val outputList = List('a, 'b, 'c, 'a, 'd, 'e)
+      compress(inputList) should equal (outputList)
+    } catch {
+      case nie: NotImplementedError => pending
+    }
   }
 
-
-  /*
-    If a list contains repeated elements they should be placed in separate
-    sublists.
-  */
-  def pack[T](list: List[T]) = _____
 
   test("P09 (**) Pack consecutive duplicates of list elements into sublists") {
-    val inputList = List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)
-    val outputList = List(List('a, 'a, 'a, 'a), List('b), List('c, 'c), List('a, 'a), List('d), List('e, 'e, 'e, 'e))
-    pack(inputList) should equal (outputList)
+    try {
+      val inputList = List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)
+      val outputList = List(List('a, 'a, 'a, 'a), List('b), List('c, 'c), List('a, 'a), List('d), List('e, 'e, 'e, 'e))
+      pack(inputList) should equal (outputList)
+    } catch {
+      case nie: NotImplementedError => pending
+    }
   }
 
 
-  /*
-    Use the result of problem P09 to implement the so-called run-length
-    encoding data compression method. Consecutive duplicates of elements
-    are encoded as tuples (N, E) where N is the number of duplicates of the
-    element E.
-  */
-  def encode[T](list: List[T]) = _____
-
-  test("P10 (*) Run-length encoding of a list") {
-    val inputList = List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)
-    val outputList = List((4,'a), (1,'b), (2,'c), (2,'a), (1,'d), (4,'e))
-    encode(inputList) should equal (outputList)
+  test("P10 (*)  Run-length encoding of a list") {
+    try {
+      val inputList = List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)
+      val outputList = List((4,'a), (1,'b), (2,'c), (2,'a), (1,'d), (4,'e))
+      encode(inputList) should equal (outputList)
+    } catch {
+      case nie: NotImplementedError => pending
+    }
   }
 
 
-  /*
-    Modify the result of problem P10 in such a way that if an element has no
-    duplicates it is simply copied into the result list. Only elements with
-    duplicates are transferred as (N, E) terms.
-  */
-  def encodeModified[T](list: List[T]) = _____
-
-  test("P11 (*) Modified run-length encoding") {
-    val inputList = List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)
-    val outputList = List((4,'a), 'b, (2,'c), (2,'a), 'd, (4,'e))
-    encodeModified(inputList) should equal (outputList)
+  test("P11 (*)  Modified run-length encoding") {
+    try {
+      val inputList = List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)
+      val outputList = List((4,'a), 'b, (2,'c), (2,'a), 'd, (4,'e))
+      encodeModified(inputList) should equal (outputList)
+    } catch {
+      case nie: NotImplementedError => pending
+    }
   }
 
-
-  /*
-    Given a run-length code list generated as specified in problem P10,
-    construct its uncompressed version.
-  */
-  def decode[T](list: List[T]) = _____
 
   test("P12 (**) Decode a run-length encoded list") {
-    val encodedInputList = List((4, 'a), (1, 'b), (2, 'c), (2, 'a), (1, 'd), (4, 'e))
-    val outputList = List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)
-    decode(encodedInputList) should equal (outputList)
+    try {
+      val encodedInputList = List((4, 'a), (1, 'b), (2, 'c), (2, 'a), (1, 'd), (4, 'e))
+      val outputList = List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)
+      decode(encodedInputList) should equal (outputList)
+    } catch {
+      case nie: NotImplementedError => pending
+    }
   }
 
-
-  /*
-    Implement the so-called run-length encoding data compression method
-    directly. I.e. don't use other methods you've written (like P09's pack);
-    do all the work directly.
-  */
-  def encodeDirect[T](list: List[T]) = _____
 
   test("P13 (**) Run-length encoding of a list (direct)") {
-    val inputList = List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)
-    val outputList = List((4, 'a), (1, 'b), (2, 'c), (2, 'a), (1, 'd), (4, 'e))
-    encodeDirect(inputList) should equal (outputList)
+    try {
+      val inputList = List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)
+      val outputList = List((4, 'a), (1, 'b), (2, 'c), (2, 'a), (1, 'd), (4, 'e))
+      encodeDirect(inputList) should equal (outputList)
+    } catch {
+      case nie: NotImplementedError => pending
+    }
   }
 
 
-  def duplicate[T](list: List[T]) = _____
-
-  test("P14 (*) Duplicate the elements of a list") {
-    val inputList = List('a, 'b, 'c, 'c, 'd)
-    val outputList = List('a, 'a, 'b, 'b, 'c, 'c, 'c, 'c, 'd, 'd)
-    duplicate(inputList) should equal (outputList)
+  test("P14 (*)  Duplicate the elements of a list") {
+    try {
+      val inputList = List('a, 'b, 'c, 'c, 'd)
+      val outputList = List('a, 'a, 'b, 'b, 'c, 'c, 'c, 'c, 'd, 'd)
+      duplicate(inputList) should equal (outputList)
+    } catch {
+      case nie: NotImplementedError => pending
+    }
   }
 
-
-  def duplicateN[T](times: Int, list: List[T]) = _____
 
   test("P15 (**) Duplicate the elements of a list a given number of times") {
-    val inputList = List('a, 'b, 'c, 'c, 'd)
-    val outputList = List('a, 'a, 'a, 'b, 'b, 'b, 'c, 'c, 'c, 'c, 'c, 'c, 'd, 'd, 'd)
-    duplicateN(3, inputList) should equal (outputList)
+    try {
+      val inputList = List('a, 'b, 'c, 'c, 'd)
+      val outputList = List('a, 'a, 'a, 'b, 'b, 'b, 'c, 'c, 'c, 'c, 'c, 'c, 'd, 'd, 'd)
+      duplicateN(3, inputList) should equal (outputList)
+    } catch {
+      case nie: NotImplementedError => pending
+    }
   }
 
-
-  def dropEachN[T](N: Int, list: List[T]) = _____
 
   test("P16 (**) Duplicate the elements of a list a given number of times") {
-    val inputList = List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)
-    val outputList = List('a, 'b, 'd, 'e, 'g, 'h, 'j, 'k)
-    dropEachN(3, inputList) should equal (outputList)
+    try {
+      val inputList = List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)
+      val outputList = List('a, 'b, 'd, 'e, 'g, 'h, 'j, 'k)
+      drop(3, inputList) should equal (outputList)
+    } catch {
+      case nie: NotImplementedError => pending
+    }
   }
 
 
-  /* The length of the first part is given. Use a Tuple for your result. */
-  def splitAt[T](splitAt: Int, list: List[T]) = _____
-
-  test("P17 (*) Split a list into two parts") {
-    val inputList = List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)
-    val outputTuple = (List('a, 'b, 'c), List('d, 'e, 'f, 'g, 'h, 'i, 'j, 'k))
-    splitAt(3, inputList) should equal (outputTuple)
+  test("P17 (*)  Split a list into two parts") {
+    try {
+      val inputList = List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)
+      val outputTuple = (List('a, 'b, 'c), List('d, 'e, 'f, 'g, 'h, 'i, 'j, 'k))
+      split(3, inputList) should equal (outputTuple)
+    } catch {
+      case nie: NotImplementedError => pending
+    }
   }
 
-
-  /*
-    Given two indices, I and K, the slice is the list containing the elements
-    from and including the Ith element up to but not including the Kth element
-    of the original list. Start counting the elements with 0.
-  */
-  def slice[T](i: Int, k: Int, list: List[T]) = _____
 
   test("P18 (**) Extract a slice from a list") {
-    val inputList = List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)
-    val outputList = List('d, 'e, 'f, 'g)
-    slice(3, 7, inputList) should equal (outputList)
+    try {
+      val inputList = List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)
+      val outputList = List('d, 'e, 'f, 'g)
+      slice(3, 7, inputList) should equal (outputList)
+    } catch {
+      case nie: NotImplementedError => pending
+    }
   }
 
-
-  def rotate[T](n: Int, list: List[T]) = _____
 
   test("P19 (**) Rotate a list N places to the left") {
-    val inputList = List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)
+    try {
+      val inputList = List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)
 
-    val outputList1 = List('d, 'e, 'f, 'g, 'h, 'i, 'j, 'k, 'a, 'b, 'c)
-    rotate(3, inputList) should equal (outputList1)
+      val outputList1 = List('d, 'e, 'f, 'g, 'h, 'i, 'j, 'k, 'a, 'b, 'c)
+      rotate(3, inputList) should equal (outputList1)
 
-    val outputList2 = List('j, 'k, 'a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i)
-    rotate(-2, inputList) should equal (outputList2)
+      val outputList2 = List('j, 'k, 'a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i)
+      rotate(-2, inputList) should equal (outputList2)
+    } catch {
+      case nie: NotImplementedError => pending
+    }
   }
 
 
-  /*
-    Return the list and the removed element in a Tuple. Elements are numbered
-    from 0.
-  */
-  def removeAt[T](k: Int, list: List[T]) = _____
-
-  test("P20 (*) Remove the Kth element from a list") {
-    val inputList = List('a, 'b, 'c, 'd)
-    val outputTuple = (List('a, 'c, 'd), 'b)
-    removeAt(1, inputList) should equal (outputTuple)
+  test("P20 (*)  Remove the Kth element from a list") {
+    try {
+      val inputList = List('a, 'b, 'c, 'd)
+      val outputTuple = (List('a, 'c, 'd), 'b)
+      removeAt(1, inputList) should equal (outputTuple)
+    } catch {
+      case nie: NotImplementedError => pending
+    }
   }
 
 
-  def insertAt[T](elem: T, k: Int, list: List[T]) = _____
-
-  test("P21 (*) Insert an element at a given position into a list") {
-    val inputList = List('a, 'b, 'c, 'd)
-    val outputList = List('a, 'new, 'b, 'c, 'd)
-    insertAt('new, 1, inputList) should equal (outputList)
+  test("P21 (*)  Insert an element at a given position into a list") {
+    try {
+      val inputList = List('a, 'b, 'c, 'd)
+      val outputList = List('a, 'new, 'b, 'c, 'd)
+      insertAt('new, 1, inputList) should equal (outputList)
+    } catch {
+      case nie: NotImplementedError => pending
+    }
   }
 
 
-  def integersInRange(from: Int, to: Int) = _____
-
-  test("P22 (*) Create a list containing all integers within a given range (inclusive)") {
-    val outputList = List(4, 5, 6, 7, 8, 9)
-    integersInRange(4, 9) should equal (outputList)
+  test("P22 (*)  Create a list containing all integers within a given range (inclusive)") {
+    try {
+      val outputList = List(4, 5, 6, 7, 8, 9)
+      integersInRange(4, 9) should equal (outputList)
+    } catch {
+      case nie: NotImplementedError => pending
+    }
   }
 
-
-  /* This method returns a list to appease the type gods in the test below */
-  def randomSelect[T](n: Int, list: List[T]) = { _____ ; List() }
 
   test("P23 (**) Extract a given number of randomly selected elements from a list") {
-    val inputList = List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h)
-    val outputList = randomSelect(3, inputList)
+    try {
+      val inputList = List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h)
+      val outputList = randomSelect(3, inputList)
 
-    /* The method for testing this is borrowed from Eric Torreborre's Scala 99
-    problems tests. <https://github.com/etorreborre/s99> */
+      /* The method for testing this is borrowed from Eric Torreborre's Scala 99
+      problems tests. <https://github.com/etorreborre/s99> */
 
-    outputList should have size (3)
-    outputList.distinct should have size (outputList.size)
+      outputList should have size (3)
+      outputList.distinct should have size (outputList.size)
+    } catch {
+      case nie: NotImplementedError => pending
+    }
   }
 
 
-  /* This method returns a list to appease the type gods in the test below. */
-  def lotto[T](n: Int, m: Int) = { _____ ; List() }
+  test("P24 (*)  Draw N different numbers from the set 1..M") {
+    try {
+      val outputRange = 1 to 49
+      val outputList = lotto(6, 49)
 
-  test("P24 (*) Draw N different numbers from the set 1..M") {
-    val outputRange = 1 to 49
-    val outputList = lotto(6, 49)
-
-    outputList should have size (6)
-    outputList foreach (outputRange should contain (_))
+      outputList should have size (6)
+      outputList foreach (outputRange should contain (_))
+    } catch {
+      case nie: NotImplementedError => pending
+    }
   }
 
-
-  /* Hint: use the solution of problem P23. */
-  def randomPermute[T](list: List[T]) = { _____ ; List() }
 
   test("P25 (**) Generate a random permutation of the elements of a list") {
-    val inputList = List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h)
-    val outputList = randomPermute(inputList)
+    try {
+      val inputList = List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h)
+      val outputList = randomPermute(inputList)
 
-    /* The method for testing this is borrowed from Eric Torreborre's Scala 99
-    problems tests. <https://github.com/etorreborre/s99> */
+      /* The method for testing this is borrowed from Eric Torreborre's Scala 99
+      problems tests. <https://github.com/etorreborre/s99> */
 
-    outputList should have size (6)
-    outputList.distinct should have size (outputList.size)
+      outputList should have size (6)
+      outputList.distinct should have size (outputList.size)
+    } catch {
+      case nie: NotImplementedError => pending
+    }
   }
 
 
+  test("P26 (**) Generate the combinations of K distinct objects chosen from the N elements of a list") {
+    try {
+      val inputList = List('a, 'b, 'c, 'd, 'e, 'f)
+      val expectedListContents = Set(
+        List('a, 'b, 'c), List('a, 'b, 'd), List('a, 'b, 'e),
+        List('a, 'b, 'f), List('a, 'c, 'd), List('a, 'c, 'e),
+        List('a, 'c, 'f), List('a, 'd, 'e), List('a, 'd, 'f),
+        List('a, 'e, 'f), List('b, 'c, 'd), List('b, 'c, 'e),
+        List('b, 'c, 'f), List('b, 'd, 'e), List('b, 'd, 'f),
+        List('b, 'e, 'f), List('c, 'd, 'e), List('c, 'd, 'f),
+        List('c, 'e, 'f), List('d, 'e, 'f))
+
+      val outputList = combination(inputList)
+
+      /* The method for testing this is borrowed from Eric Torreborre's Scala 99
+      problems tests. <https://github.com/etorreborre/s99> */
+
+      outputList should have size (expectedListContents.size)
+      expectedListContents foreach { x => outputList should(contain(x)) }
+    } catch {
+      case nie: NotImplementedError => pending
+    }
+  }
+
+
+  test("P27 (**) Generate the combinations of K distinct objects chosen from the N elements of a list (A)") {
+    try {
+      val inputList = List("Aldo", "Beat", "Carla", "David", "Evi", "Flip", "Gary", "Hugo", "Ida")
+      val outputList = group3(inputList)
+      val expectedEntry = List(List("Aldo", "Beat"), List("Carla", "David", "Evi"), List("Flip", "Gary", "Hugo", "Ida"))
+
+      /* The method for testing this is borrowed from Eric Torreborre's Scala 99
+        problems tests. <https://github.com/etorreborre/s99>
+
+        TODO: Generate reference results for comparison.
+      */
+
+      outputList should contain(expectedEntry)
+    } catch {
+      case nie: NotImplementedError => pending
+    }
+  }
+
+
+  test("P27 (**) Generate the combinations of K distinct objects chosen from the N elements of a list (B)") {
+    try {
+      val inputList = List("Aldo", "Beat", "Carla", "David", "Evi", "Flip", "Gary", "Hugo", "Ida")
+      val outputList = group(List(2, 2, 5), inputList)
+      val expectedEntry = List(List("Aldo", "Beat"), List("Carla", "David"), List("Evi", "Flip", "Gary", "Hugo", "Ida"))
+
+      /* The method for testing this is borrowed from Eric Torreborre's Scala 99
+        problems tests. <https://github.com/etorreborre/s99>
+
+        TODO: Generate reference results for comparison.
+      */
+
+      outputList should contain(expectedEntry)
+    } catch {
+      case nie: NotImplementedError => pending
+    }
+  }
+
+
+  test("P28 (**) Sorting a list of lists according to length of sublists.") (pending)
 
 }
