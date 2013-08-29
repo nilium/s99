@@ -4,8 +4,6 @@ package net.spifftastic.problems
   Scala problems 1 to 28 from http://aperiodic.net/phil/scala/s-99/
 */
 trait ListProblems {
-  private[this] def _____ = ???
-
   /*
     P01 (*) Find the last element of a list.
 
@@ -14,7 +12,7 @@ trait ListProblems {
     scala> last(List(1, 1, 2, 3, 5, 8))
     res0: Int = 8
   */
-  def last[T](list: List[T]): T = _____
+  def last[T](list: List[T]): T = ???
 
   /*
     P02 (*) Find the last but one element of a list.
@@ -24,7 +22,7 @@ trait ListProblems {
     scala> penultimate(List(1, 1, 2, 3, 5, 8))
     res0: Int = 5
   */
-  def penultimate[T](list: List[T]): T = _____
+  def penultimate[T](list: List[T]): T = ???
 
   /*
     P03 (*) Find the Kth element of a list.
@@ -36,7 +34,7 @@ trait ListProblems {
     scala> nth(2, List(1, 1, 2, 3, 5, 8))
     res0: Int = 2
   */
-  def nth[T](k: Int, list: List[T]): T = _____
+  def nth[T](k: Int, list: List[T]): T = ???
 
   /*
     P04 (*) Find the number of elements of a list.
@@ -46,7 +44,7 @@ trait ListProblems {
     scala> length(List(1, 1, 2, 3, 5, 8))
     res0: Int = 6
   */
-  def length[T](list: List[T]): Int = _____
+  def length[T](list: List[T]): Int = ???
 
   /*
     P05 (*) Reverse a list.
@@ -56,7 +54,7 @@ trait ListProblems {
     scala> reverse(List(1, 1, 2, 3, 5, 8))
     res0: List[Int] = List(8, 5, 3, 2, 1, 1)
   */
-  def reverse[T](list: List[T]): List[T] = _____
+  def reverse[T](list: List[T]): List[T] = ???
 
   /*
     P06 (*) Find whether a list is a palindrome.
@@ -66,7 +64,7 @@ trait ListProblems {
     scala> isPalindrome(List(1, 2, 3, 2, 1))
     res0: Boolean = true
   */
-  def isPalindrome[T](list: List[T]): Boolean = _____
+  def isPalindrome[T](list: List[T]): Boolean = ???
 
   /*
     P07 (**) Flatten a nested list structure.
@@ -76,7 +74,7 @@ trait ListProblems {
     scala> flatten(List(List(1, 1), 2, List(3, List(5, 8))))
     res0: List[Any] = List(1, 1, 2, 3, 5, 8)
   */
-  def flatten[T](list: List[T]): List[Any] = _____
+  def flatten[T](list: List[T]): List[Any] = ???
 
   /*
     P08 (**) Eliminate consecutive duplicates of list elements.
@@ -90,7 +88,7 @@ trait ListProblems {
     scala> compress(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
     res0: List[Symbol] = List('a, 'b, 'c, 'a, 'd, 'e)
   */
-  def compress[T](list: List[T]): List[T] = _____
+  def compress[T](list: List[T]): List[T] = ???
 
   /*
     P09 (**) Pack consecutive duplicates of list elements into sublists.
@@ -103,7 +101,7 @@ trait ListProblems {
     scala> pack(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
     res0: List[List[Symbol]] = List(List('a, 'a, 'a, 'a), List('b), List('c, 'c), List('a, 'a), List('d), List('e, 'e, 'e, 'e))
   */
-  def pack[T](list: List[T]): List[List[T]] = _____
+  def pack[T](list: List[T]): List[List[T]] = ???
 
   /*
     P10 (*) Run-length encoding of a list.
@@ -118,7 +116,7 @@ trait ListProblems {
     scala> encode(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
     res0: List[(Int, Symbol)] = List((4,'a), (1,'b), (2,'c), (2,'a), (1,'d), (4,'e))
   */
-  def encode[T](list: List[T]): List[(Int, T)] = _____
+  def encode[T](list: List[T]): List[(Int, T)] = ???
 
   /*
     P11 (*) Modified run-length encoding.
@@ -132,7 +130,7 @@ trait ListProblems {
     scala> encodeModified(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
     res0: List[Any] = List((4,'a), 'b, (2,'c), (2,'a), 'd, (4,'e))
   */
-  def encodeModified[T](list: List[T]): List[Any] = _____
+  def encodeModified[T](list: List[T]): List[Any] = ???
 
   /*
     P12 (**) Decode a run-length encoded list.
@@ -145,7 +143,7 @@ trait ListProblems {
     scala> decode(List((4, 'a), (1, 'b), (2, 'c), (2, 'a), (1, 'd), (4, 'e)))
     res0: List[Symbol] = List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)
   */
-  def decode[T](list: List[(Int, T)]): List[T] = _____
+  def decode[T](list: List[(Int, T)]): List[T] = ???
 
   /*
     P13 (**) Run-length encoding of a list (direct).
@@ -159,7 +157,7 @@ trait ListProblems {
     scala> encodeDirect(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
     res0: List[(Int, Symbol)] = List((4,'a), (1,'b), (2,'c), (2,'a), (1,'d), (4,'e))
   */
-  def encodeDirect[T](list: List[T]): List[(Int, T)] = _____
+  def encodeDirect[T](list: List[T]): List[(Int, T)] = ???
 
   /*
     P14 (*) Duplicate the elements of a list.
@@ -169,7 +167,7 @@ trait ListProblems {
     scala> duplicate(List('a, 'b, 'c, 'c, 'd))
     res0: List[Symbol] = List('a, 'a, 'b, 'b, 'c, 'c, 'c, 'c, 'd, 'd)
   */
-  def duplicate[T](list: List[T]): List[T] = _____
+  def duplicate[T](list: List[T]): List[T] = ???
 
   /*
     P15 (**) Duplicate the elements of a list a given number of times.
@@ -179,7 +177,7 @@ trait ListProblems {
     scala> duplicateN(3, List('a, 'b, 'c, 'c, 'd))
     res0: List[Symbol] = List('a, 'a, 'a, 'b, 'b, 'b, 'c, 'c, 'c, 'c, 'c, 'c, 'd, 'd, 'd)
   */
-  def duplicateN[T](times: Int, list: List[T]): List[T] = _____
+  def duplicateN[T](times: Int, list: List[T]): List[T] = ???
 
   /*
     P16 (**) Duplicate the elements of a list a given number of times.
@@ -189,7 +187,7 @@ trait ListProblems {
     scala> drop(3, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k))
     res0: List[Symbol] = List('a, 'b, 'd, 'e, 'g, 'h, 'j, 'k)
   */
-  def drop[T](N: Int, list: List[T]): List[T] = _____
+  def drop[T](N: Int, list: List[T]): List[T] = ???
 
   /*
     P17 (*) Split a list into two parts.
@@ -201,7 +199,7 @@ trait ListProblems {
     scala> split(3, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k))
     res0: (List[Symbol], List[Symbol]) = (List('a, 'b, 'c),List('d, 'e, 'f, 'g, 'h, 'i, 'j, 'k))
   */
-  def split[T](length: Int, list: List[T]): (List[T], List[T]) = _____
+  def split[T](length: Int, list: List[T]): (List[T], List[T]) = ???
 
   /*
     P18 (**) Extract a slice from a list.
@@ -215,7 +213,7 @@ trait ListProblems {
     scala> slice(3, 7, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k))
     res0: List[Symbol] = List('d, 'e, 'f, 'g)
   */
-  def slice[T](i: Int, k: Int, list: List[T]): List[T] = _____
+  def slice[T](i: Int, k: Int, list: List[T]): List[T] = ???
 
   /*
     P19 (**) Rotate a list N places to the left.
@@ -228,7 +226,7 @@ trait ListProblems {
     scala> rotate(-2, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k))
     res1: List[Symbol] = List('j, 'k, 'a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i)
   */
-  def rotate[T](n: Int, list: List[T]): List[T] = _____
+  def rotate[T](n: Int, list: List[T]): List[T] = ???
 
   /*
     P20 (*) Remove the Kth element from a list.
@@ -241,7 +239,7 @@ trait ListProblems {
     scala> removeAt(1, List('a, 'b, 'c, 'd))
     res0: (List[Symbol], Symbol) = (List('a, 'c, 'd),'b)
   */
-  def removeAt[T](k: Int, list: List[T]): (List[T], T) = _____
+  def removeAt[T](k: Int, list: List[T]): (List[T], T) = ???
 
   /*
     P21 (*) Insert an element at a given position into a list.
@@ -251,7 +249,7 @@ trait ListProblems {
     scala> insertAt('new, 1, List('a, 'b, 'c, 'd))
     res0: List[Symbol] = List('a, 'new, 'b, 'c, 'd)
   */
-  def insertAt[T](elem: T, k: Int, list: List[T]): List[T] = _____
+  def insertAt[T](elem: T, k: Int, list: List[T]): List[T] = ???
 
   /*
     P22 (*) Create a list containing all integers within a given range.
@@ -261,7 +259,7 @@ trait ListProblems {
     scala> range(4, 9)
     res0: List[Int] = List(4, 5, 6, 7, 8, 9)
   */
-  def integersInRange(from: Int, to: Int): List[Int] = _____
+  def integersInRange(from: Int, to: Int): List[Int] = ???
 
   /*
     P23 (**) Extract a given number of randomly selected elements from a list.
@@ -275,7 +273,7 @@ trait ListProblems {
 
     (This method returns a list to appease the type gods in the test below.)
   */
-  def randomSelect[T](n: Int, list: List[T]): List[T] = _____
+  def randomSelect[T](n: Int, list: List[T]): List[T] = ???
 
   /*
     P24 (*) Draw N different numbers from the set 1..M.
@@ -287,7 +285,7 @@ trait ListProblems {
 
     (This method returns a list to appease the type gods in the test below.)
   */
-  def lotto(n: Int, m: Int): List[Int] = _____
+  def lotto(n: Int, m: Int): List[Int] = ???
 
   /*
     P25 (**) Generate a random permutation of the elements of a list.
@@ -299,7 +297,7 @@ trait ListProblems {
     scala> randomPermute(List('a, 'b, 'c, 'd, 'e, 'f))
     res0: List[Symbol] = List('b, 'a, 'd, 'c, 'e, 'f)
   */
-  def randomPermute[T](list: List[T]): List[T] = _____
+  def randomPermute[T](list: List[T]): List[T] = ???
 
   /*
     P26 (**) Generate the combinations of K distinct objects chosen from the N
@@ -315,7 +313,7 @@ trait ListProblems {
     scala> combinations(3, List('a, 'b, 'c, 'd, 'e, 'f))
     res0: List[List[Symbol]] = List(List('a, 'b, 'c), List('a, 'b, 'd), List('a, 'b, 'e), ...
   */
-  def combination[T](list: List[T]): List[List[T]] = _____
+  def combination[T](list: List[T]): List[List[T]] = ???
 
   /*
     P27 (**) Group the elements of a set into disjoint subsets.
@@ -345,8 +343,8 @@ trait ListProblems {
     You may find more about this combinatorial problem in a good book on
     discrete mathematics under the term "multinomial coefficients".
   */
-  def group3[T](list: List[T]): List[List[List[T]]] = _____
-  def group[T](lists: List[Int], list: List[T]): List[List[List[T]]] = _____
+  def group3[T](list: List[T]): List[List[List[T]]] = ???
+  def group[T](lists: List[Int], list: List[T]): List[List[List[T]]] = ???
 
   /*
     P28 (**) Sorting a list of lists according to length of sublists.
@@ -376,7 +374,7 @@ trait ListProblems {
     lists have length 3 and there are two list of this length. Finally, the
     last three lists have length 2. This is the most frequent length.
   */
-  def lsort[T](list: List[List[T]]): List[List[T]] = _____
+  def lsort[T](list: List[List[T]]): List[List[T]] = ???
 
-  def lsortFreq[T](list: List[List[T]]): List[List[T]] = _____
+  def lsortFreq[T](list: List[List[T]]): List[List[T]] = ???
 }
